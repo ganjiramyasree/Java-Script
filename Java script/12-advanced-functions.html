@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--<button onclick="
+    updateButton();
+    ">Finish</button>-->
+
+    <button onclick="
+    updateBUtton();
+    ">Add to Cart</button>
+    <p class="js-message"></p>
+    <script>
+        /*function updateButton()
+        {
+            const buttonFinish=document.querySelector('button');
+        
+            buttonFinish.innerHTML='Loading...';
+        
+        setTimeout(function(){
+            buttonFinish.innerHTML='Finished';
+        },1000)
+    }*/
+
+    function updateBUtton()
+    {
+        const but=document.querySelector('.js-message');
+        but.innerHTML='Added';
+
+        setTimeout(function(){
+            but.innerHTML='';
+        },2000)
+    }
+
+    </script>
+</body>
+</html>

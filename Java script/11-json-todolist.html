@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Todo List</p>
+    <input class="todo-input" placeholder="Todo name">
+    <input type="date" class="todo-date" placeholder="yyyy-mm-dd">
+    <button class="add-button" onclick="
+    todoArray();
+    ">Add</button>
+    <div class="todo-div"></div>
+    <script>
+        let result=JSON.parse(localStorage.getItem('Result'))||[{
+            resultName:'',
+            resultDate:''
+        }];
+        renderArray();
+        function renderArray()
+        {
+            let todo='';
+            for(let i=0;i<result.length;i++)
+            {
+                let todoObject=result[i];
+                let resultName=todoObject.resultName;
+                let resultDate=todoObject.resultDate;
+                let html=`<p>
+                    ${resultName} ${resultDate}
+                    <button onclick="
+                    result.splice(${i},1);
+                    renderArray();
+                    ">Delete</button>
+                </p>`
+                todo+=html;
+            }
+            document.querySelector('.todo-div').innerHTML=todo;
+            
+        }
+
+        function todoArray()
+        {
+            let inputElement=document.querySelector('.todo-input');
+            let dateElement=document.querySelector('.todo-date');
+            let resultName=inputElement.value;
+            let resultDate=dateElement.value;
+            result.push({
+                resultName,
+                resultDate
+            });
+            inputElement.value='';
+            dateElement.value='';
+            renderArray();
+            localStorage.setItem('Result',JSON.stringify(result));
+        }
+    </script>
+</body>
+</html>

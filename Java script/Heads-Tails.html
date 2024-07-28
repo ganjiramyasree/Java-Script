@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heads-Tails</title>
+</head>
+<body>
+    <script>
+        let randomGuess=Math.random();
+        console.log(randomGuess)
+        let myGuess='Head';
+        let result='';
+        if(randomGuess>=0 && randomGuess<0.5)
+        {
+           result='Head';
+           console.log('head') 
+        }
+        else
+        {
+           result='tail'; 
+           console.log('tail')
+        }
+
+        result==='Head' && myGuess==='Head'? console.log('You win'):console.log('You lose')
+
+
+
+    </script>
+</body>
+</html>

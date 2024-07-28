@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <p>Todo List</p>
+    <input placeholder="Todo name" class="todo-input">
+    <input placeholder="yyyy-mm-dd" type="date" class="todo-date">
+    <button onclick="
+    todoList();
+    ">Add</button>
+    <div class="js-todo-list"></div>
+    <script>
+        const result=[{
+            resultName:'',
+            resultDate:''
+        }];
+        
+        todoListHtml();
+        function todoListHtml()
+        {
+            let todo='';
+            for(let i=0;i<result.length;i++)
+            {
+                let todoObject =result[i];
+                let resultName=todoObject.resultName;
+                let resultDate=todoObject.resultDate;
+                let todoHtml=`<p>
+                    ${resultName} ${resultDate}
+                    <button onclick="
+                    result.splice(${i},1);
+                    todoListHtml(); 
+                    ">Delete</button>
+                </p>`;
+                todo+=todoHtml;
+            }
+            //console.log(todo);
+            document.querySelector('.js-todo-list').innerHTML=todo;
+
+        }
+        function todoList()
+        {
+            let inputElement=document.querySelector('.todo-input');
+            let dateElement=document.querySelector('.todo-date');
+            let resultName=inputElement.value;
+            let resultDate=dateElement.value;
+            result.push({
+                resultName,
+                resultDate
+            });
+           
+            //console.log(result);
+            inputElement.value='';
+            dateElement.value='';
+            todoListHtml();
+        }
+    </script>
+</body>
+</html>

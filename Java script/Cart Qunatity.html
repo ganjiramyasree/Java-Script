@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Quantity</title>
+</head>
+<body>
+    <p>Cart Quantity</p>
+    <button onclick="
+    //console.log(`Cart Quantity:${cartQuantity}`);
+    showCart();
+    ">Show Quantity</button>
+    <button onclick="
+    if(cartQuantity+1>10)
+    {
+        alert('Cart is full')
+    }
+    else
+    {
+        cartQuantity+=1
+        console.log(`Cart Quantity:${cartQuantity}`);
+    }
+    showCart();
+    ">Add Cart</button>
+    <button onclick="
+    if(cartQuantity+2>10)
+    {
+        alert('Cart is full')
+    }
+    else
+    {
+    cartQuantity+=2;
+    console.log(`Cart Quantity:${cartQuantity}`);
+    }
+    showCart();
+    ">+2</button>
+    <button onclick="
+    if(cartQuantity+3>10)
+    {
+        alert('Cart is full')
+    }
+    else
+    {
+    cartQuantity+=3;
+    console.log(`Cart Quantity:${cartQuantity}`);
+    }
+    showCart();
+    ">+3</button>
+    <button onclick="
+    if(cartQuantity-1<0)
+    {
+        alert('Not enough items in the cart')
+    }
+    else
+    {
+    cartQuantity-=1;
+    console.log(`Cart Quantity:${cartQuantity}`);
+    }
+    showCart();
+    ">-1</button>
+    <button onclick="
+    if(cartQuantity-2<0)
+    {
+        alert('Not enough items in the cart')
+    }
+    else
+    {
+    cartQuantity-=2;
+    console.log(`Cart Quantity:${cartQuantity}`);
+    }
+    showCart();
+    ">-2</button>
+    <button onclick="
+    console.log('Cart is reset.')
+    cartQuantity=0;
+    console.log(`Cart Quantity:${cartQuantity}`);
+    showCart();
+    ">Reset</button>
+    <p class="cart-weight">Cart Quantity:0</p>
+    <script>
+        let cartQuantity=0;
+        function showCart()
+        {
+            document.querySelector('.cart-weight').innerHTML=`Cart Quantity: ${cartQuantity}`;
+        }
+        
+    </script>
+</body>
+</html>

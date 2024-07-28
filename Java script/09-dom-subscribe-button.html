@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            border: none;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            border-radius: 50px;
+            padding: 15px;
+            font-size: medium;
+            cursor: pointer;
+        }
+        .is-subscribed{
+            background-color:rgb(240,240,240);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="
+    
+    if(document.querySelector('button').innerHTML==='SUBSCRIBE')
+    {
+        document.querySelector('button').innerHTML='Subscribed'; 
+        document.querySelector('button').classList.add('is-subscribed');
+    }
+    else
+    {
+        document.querySelector('button').innerHTML='SUBSCRIBE';
+        document.querySelector('button').classList.remove('is-subscribed');
+    }
+    ">SUBSCRIBE</button>
+    <script>
+        
+    </script>
+</body>
+</html>

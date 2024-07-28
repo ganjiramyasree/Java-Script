@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Temperature</title>
+</head>
+<body>
+    <script>
+        let number;
+        let unit;
+        function convertTemperature(number,unit)
+        {
+            if(unit==='F'){
+            C=(number-32)*5/9;
+            console.log(C,'C');
+
+            }
+            else if(unit==='C')
+            {
+            F=(number*9/5)+32;
+            console.log(F,'F');
+            }
+        }
+        convertTemperature(25,'C')
+        
+    </script>
+</body>
+</html>
